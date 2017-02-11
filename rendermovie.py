@@ -3,11 +3,11 @@ from math import sin, cos, pi
 
 import matplotlib.pyplot as plt
 
-import qlearning
+import simulation
 
 dt = 0.02
-step_cnt = 500
-data = simulation.get_steps([0, 0, 0, 0], step_cnt, dt)
+step_cnt = 20
+data = simulation.get_steps_qlearning([0, 0, 0, 0], step_cnt, dt)
 
 fig = plt.figure(0)
 fig.suptitle("Pendulum on Cart")
@@ -54,7 +54,7 @@ def draw_point(point):
     cart_plot.plot([point[1]-.1,point[1]+.1],[0,0],'r-',lw=5)
     cart_plot.plot([point[1],point[1]+.4*sin(point[3])],[0,.4*cos(point[3])],'g-', lw=4)
 t = 0
-fps = 1.0 / dt
+fps = int(1.0 / dt)
 frame_number = 1
 for point in data:
     if point[0] >= t + 1./fps or not t:
@@ -63,4 +63,4 @@ for point in data:
         fig.savefig('img/_tmp%03d.png' % frame_number)
         frame_number += 1
 
-print os.system("ffmpeg -framerate 25 -i img/_tmp%03d.png  -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4")
+print os.system("ffmpeg -framerate " + str(int(fps)) + " -i img/_tmp%03d.png  -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4")

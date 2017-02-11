@@ -1,4 +1,5 @@
-from math import sin, cos
+from math import sin, cos, pi
+from numpy import array
 import qlearning
 
 def simulate_step(state, force, dt):
@@ -28,19 +29,38 @@ def simulate_step(state, force, dt):
 
 	return next_state
 
+def convert_action(a):
+	return 0
+
+def reward(state):
+	return 0
+
+def is_terminal(state):
+	return False
+
 # force, x, x_dot, theta, theta_dot
-def get_steps(initial_state, step_cnt, dt):
+def get_steps_qlearning(initial_state, step_cnt, dt):
 	state = initial_state
 	states = [[0] + state]
 
+	Q = qlearning.initial([255, 255, 255])
+
 	MAX_FORCE = 5
-
 	t = 0
-	for i in range(STEP_CNT):
+	for i in range(step_cnt):
 		t = t + dt
-		force = 0
+		
+		a = qlearning.action(Q, state)
+		force = convert_action(a)
+		next_state = simulate_step(state, force, dt)
+		r = reward(state)
 
-		state = simulation.simulate_step(state, force, dt)
-		states.append([t] + state)
+		Q = qlearning.update(Q, state, a, next_state, r)
+
+		states.append([t] + next_state)
+		state = next_state
+
+		if is_terminal(state):
+			state = initial_state
 
 	return array(states)
