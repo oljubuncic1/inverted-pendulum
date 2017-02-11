@@ -5,6 +5,9 @@ import fuzzy
 import matplotlib.pyplot as plt
 
 def scale(x):
+	while x > 2 * pi:
+		x = x - 2 * pi
+
 	return x
 
 def simulate_step(state, force, dt):
@@ -12,7 +15,7 @@ def simulate_step(state, force, dt):
 
 	# constants
 	GRAVITY=9.8
-	MASSCART=1.0
+	MASSCART=5.0
 	MASSPOLE=0.1
 	TOTAL_MASS = MASSPOLE + MASSCART
 	LENGTH = 0.5
@@ -116,11 +119,13 @@ def get_steps_fuzzy(initial_state, step_cnt, dt):
 		controller.compute()
 
 		output_force = controller.output['force']
-		print output_force
 		output_force = scale_output(output_force, 100)
 
-		next_state = simulate_step(state, output_force, dt)
+		# output_force = 0
+
+		next_state = simulate_step(state, -output_force, dt)
+		next_state[0] = 0
 		states.append([t] + next_state)
 		state = next_state
 
-	return [ s[3] for s in states ]
+	return [s[3] for s in states]
