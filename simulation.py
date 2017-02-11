@@ -1,6 +1,11 @@
 from math import sin, cos, pi
 from numpy import array
 import qlearning
+import fuzzy
+import matplotlib.pyplot as plt
+
+def scale(x):
+	return x
 
 def simulate_step(state, force, dt):
 	x, x_dot, theta, theta_dot = state[0], state[1], state[2], state[3]
@@ -26,36 +31,55 @@ def simulate_step(state, force, dt):
 	xacc  = temp - POLEMASS_LENGTH * thetaacc* costheta / TOTAL_MASS
 
 	next_state = [x + STEP * x_dot, x_dot + STEP *xacc, theta + STEP * theta_dot, theta_dot + STEP * thetaacc]
+	next_state[2] = scale(next_state[2])
+	next_state[3] = scale(next_state[2])
 
 	return next_state
 
 def convert_action(a):
-	return 0
+	MAX_FORCE = 5.0
+	
+	return MAX_FORCE * (a / 255.0)
 
 def reward(state):
-	return 0
+	theta = state[2]
+
+	print str(round(theta, 2)) + " " + str(pi / 2)
+
+	if abs(theta) < 0.01:
+		return 1000.0
+	elif theta > pi / 2.0:
+		return -1000.0
+	else:
+		return 0
 
 def is_terminal(state):
-	return False
+	theta = state[2]
+
+	return theta > pi / 2.0
 
 # force, x, x_dot, theta, theta_dot
 def get_steps_qlearning(initial_state, step_cnt, dt):
 	state = initial_state
 	states = [[0] + state]
 
-	Q = qlearning.initial([255, 255, 255])
+	Q = qlearning.initial( (10, 10, 10) )
 
-	MAX_FORCE = 5
 	t = 0
 	for i in range(step_cnt):
 		t = t + dt
 		
-		a = qlearning.action(Q, state)
+		a = qlearning.action(Q, state[2:4])
 		force = convert_action(a)
-		next_state = simulate_step(state, force, dt)
-		r = reward(state)
+		
+		# print a
+		# print force
+		# print state
 
-		Q = qlearning.update(Q, state, a, next_state, r)
+		next_state = simulate_step(state, force, dt)
+		r = reward(next_state)
+
+		Q = qlearning.update(Q, state[2:4], a, next_state[2:4], r)
 
 		states.append([t] + next_state)
 		state = next_state
@@ -63,4 +87,40 @@ def get_steps_qlearning(initial_state, step_cnt, dt):
 		if is_terminal(state):
 			state = initial_state
 
-	return array(states)
+	print Q
+
+	# return array(states)
+	return [ s[2] for s in states ]
+
+def scale_output(x, factor=1.):
+    return x * factor
+
+def get_steps_fuzzy(initial_state, step_cnt, dt):
+	# state is x, x_dot, theta, theta_dot
+	# step_cnt number of simulation steps
+	# dt time interval of simulation
+	state = initial_state
+	states = [[0] + state]
+
+	controller = fuzzy.get_controller()
+
+	t = 0
+	for i in range(step_cnt):
+		print state
+		t = t + dt
+		
+		theta = state[2]
+		dtheta = state[3]
+		controller.input['theta'] = theta - pi
+		controller.input['dtheta'] = dtheta
+		controller.compute()
+
+		output_force = controller.output['force']
+		print output_force
+		output_force = scale_output(output_force, 100)
+
+		next_state = simulate_step(state, output_force, dt)
+		states.append([t] + next_state)
+		state = next_state
+
+	return [ s[3] for s in states ]

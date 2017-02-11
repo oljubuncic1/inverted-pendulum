@@ -5,7 +5,6 @@ import serial
 ser = serial.Serial('/dev/ttyACM0', 9600)
 controller = fuzzy.get_controller()
 
-
 def scale_output(x, factor=1.):
     return x * factor
 
