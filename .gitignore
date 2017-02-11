@@ -87,3 +87,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Generated mp4 files
+.mp4
+
+# Compiler outputs
+.o
