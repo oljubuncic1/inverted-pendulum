@@ -102,3 +102,6 @@ img/
 
 # PyCharm Projects
 .idea/
+
+# Generated movies
+*.mp4
