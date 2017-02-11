@@ -5,7 +5,9 @@ import matplotlib.pyplot as plt
 
 import qlearning
 
-data = qlearning.get()
+dt = 0.02
+step_cnt = 500
+data = simulation.get_steps([0, 0, 0, 0], step_cnt, dt)
 
 fig = plt.figure(0)
 fig.suptitle("Pendulum on Cart")
@@ -52,7 +54,7 @@ def draw_point(point):
     cart_plot.plot([point[1]-.1,point[1]+.1],[0,0],'r-',lw=5)
     cart_plot.plot([point[1],point[1]+.4*sin(point[3])],[0,.4*cos(point[3])],'g-', lw=4)
 t = 0
-fps = 5.
+fps = 1.0 / dt
 frame_number = 1
 for point in data:
     if point[0] >= t + 1./fps or not t:
