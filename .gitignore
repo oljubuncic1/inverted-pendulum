@@ -93,3 +93,9 @@ ENV/
 
 # Compiler outputs
 .o
+
+# Images
+img/
+
+# python bytecode
+*.pyc
