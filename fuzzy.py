@@ -19,6 +19,7 @@ def get_controller():
     dtheta['z'] = fuzz.trimf(dtheta.universe, [-0.1745, 0, 0.1745])
     dtheta['mp'] = fuzz.trimf(dtheta.universe, [0, 0.3927, 0.7854])
     dtheta['vp'] = fuzz.trapmf(dtheta.universe, [0.5973, 1.579, 4.048, 4.128])
+
     force['vn'] = fuzz.trapmf(force.universe, [-1.311, -1.286, -0.5001, -0.1875])
     force['mn'] = fuzz.trimf(force.universe, [-0.25, -0.125, 0])
     force['z'] = fuzz.trimf(force.universe, [-0.0555, 0, 0.05555])

@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 
 import simulation
 
-dt = 0.02
+dt = 0.1
 step_cnt = 100
-data = simulation.get_steps_fuzzy([0, 0, pi / 4, 0], step_cnt, dt)
+data = simulation.get_steps_fuzzy([0, 0, pi/4, 0], step_cnt, dt)
 
 plt.plot(data)
 plt.show()

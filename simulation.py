@@ -13,6 +13,9 @@ def scale(x):
 def simulate_step(state, force, dt):
 	x, x_dot, theta, theta_dot = state[0], state[1], state[2], state[3]
 
+	theta = scale(theta)
+	theta_dot = scale(theta_dot)
+
 	# constants
 	GRAVITY=9.8
 	MASSCART=5.0
@@ -107,25 +110,30 @@ def get_steps_fuzzy(initial_state, step_cnt, dt):
 
 	controller = fuzzy.get_controller()
 
+	forces = []
+
 	t = 0
 	for i in range(step_cnt):
-		print state
+#		print state
 		t = t + dt
 		
 		theta = state[2]
 		dtheta = state[3]
 		controller.input['theta'] = theta - pi
-		controller.input['dtheta'] = dtheta
+		controller.input['dtheta'] = dtheta - pi
 		controller.compute()
 
 		output_force = controller.output['force']
-		output_force = scale_output(output_force, 100)
+		output_force = scale_output(output_force, 50)
+		forces.append(output_force)
+		#print theta-pi, dtheta-pi, output_force
+		if theta != dtheta:
+			print 'hi', theta, dtheta
 
 		# output_force = 0
 
-		next_state = simulate_step(state, -output_force, dt)
+		next_state = simulate_step(state, output_force, dt)
 		next_state[0] = 0
 		states.append([t] + next_state)
 		state = next_state
-
-	return [s[3] for s in states]
+	return [s[2] for s in states]
