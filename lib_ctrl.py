@@ -18,24 +18,26 @@ def normalize_theta(theta):
 
 print 'Connection established'
 
-ctrl = fake_ctrl()
+ctrl = get_lib()
 time.sleep(10)
 prev_theta = 0
+exception_count = 5
 while 1:
     try: 
         theta = ser.readline()
         theta = float(theta[1:])
         theta = normalize_theta(theta)
         dtheta = (theta - prev_theta) / 0.01
-#        ctrl.input['theta'] = theta
-#        ctrl.input['dtheta'] = dtheta
-#        ctrl.compute()
+        ctrl.input['theta'] = theta
+        ctrl.input['dtheta'] = dtheta
+        ctrl.compute()
 
-        original_output_force = ctrl.output({'theta': theta, 'dtheta': dtheta})['force']
+        prev_theta = theta
+#        original_output_force = ctrl.output({'theta': theta, 'dtheta': dtheta})['force']
+        original_output_force = ctrl.output['force']
         if original_output_force == -1024:
             print 'belaj', theta, dtheta
             continue
-        prev_theta = theta
         output_force = abs(original_output_force) * 100
         if original_output_force > 0:
             output_force = output_force + 100

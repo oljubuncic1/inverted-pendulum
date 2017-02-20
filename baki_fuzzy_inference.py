@@ -1,7 +1,7 @@
 from fakefi import FuzzyControl
 from math import pi
 
-def get_controller():
+def get_controller(): 
     ctrl = FuzzyControl()
     all_memberships = [
             ['trapezoid_left', -1.57, -0.58, 'vn'],
@@ -10,8 +10,8 @@ def get_controller():
             ['triangle', 0.3927, 0.3927, 'mp'],
             ['trapezoid_right', 0.59, 1.579, 'vp'],
             ]
-    ctrl.add_input('theta', (-1 * pi, pi), all_memberships)
-    ctrl.add_input('dtheta', (-1 * pi, pi), list(all_memberships))
+    ctrl.add_input('theta', (-1 * pi/2, pi/2), all_memberships)
+    ctrl.add_input('dtheta', (-1 * 100, 100), list(all_memberships))
 
     force_memberships = [
             ['trapezoid_left', -0.5, -0.1875, 'vn'],
@@ -50,6 +50,6 @@ def get_controller():
     ctrl.add_rule({'theta': 'mp', 'dtheta': 'mn'}, {'force': 'mn'})
     ctrl.add_rule({'theta': 'mp', 'dtheta': 'z'}, {'force': 'mn'})
     ctrl.add_rule({'theta': 'mp', 'dtheta': 'mp'}, {'force': 'vn'})
-    ctrl.add_rule({'theta': 'mp', 'dtheta': 'vn'}, {'force': 'vn'})
+    ctrl.add_rule({'theta': 'mp', 'dtheta': 'vp'}, {'force': 'vn'})
 
     return ctrl

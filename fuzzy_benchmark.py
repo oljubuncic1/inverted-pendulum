@@ -12,6 +12,9 @@ lib_sum = 0
 for i in range(0, 100):
     theta = random.random() * 3.14
     dtheta = random.random() * 3.14
+    theta = 0.139277274309 
+    dtheta = 5.48033385126
+    
 
     print 'ins', theta, dtheta
 
@@ -19,6 +22,7 @@ for i in range(0, 100):
     lib_ctrl.input['theta'] = theta
     lib_ctrl.input['dtheta'] = dtheta
     lib_ctrl.compute()
+    lib_ctrl.print_state()
     lib_out = lib_ctrl.output['force']
     lib_sum = lib_sum + (time.time() - temp)
 
@@ -30,5 +34,6 @@ for i in range(0, 100):
     
     print '\tfake', fake_out
     print 'sums', lib_sum, fake_sum
+    break
 
 
