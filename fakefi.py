@@ -147,7 +147,7 @@ class FuzzyControl:
 
         def add_input(self, name, rng, memberships):
                 self.inputs[name] = self.rule_set(rng, memberships)
-                print 'params', name, rng, memberships
+                #print 'params', name, rng, memberships
 
         def add_output(self, name, rng, memberships):
                 self.outputs[name] = self.rule_set(rng, memberships)
@@ -160,14 +160,14 @@ class FuzzyControl:
                 dof = 1
                 for i in x:
                         f = self.inputs[i][antecedents[i]]
-                        print '\t', f(0, 'properties'), "f(", x[i], ") = ", f(x[i])
+                        #print '\t', f(0, 'properties'), "f(", x[i], ") = ", f(x[i])
                         dof *= f(x[i])
                 
                 return dof
 
         def output(self, inputs):
                 outs = {}
-                print 'INPTS', self.inputs
+                #print 'INPTS', self.inputs
                 for output in self.outputs:
                         total_sum = 0.0
                         total_area = 0.0
@@ -179,7 +179,7 @@ class FuzzyControl:
                                         continue
 
                                 dof = self.matching_degree(inputs, antecedents)
-                                print r, dof
+                                #print r, dof
 
                                 f = self.outputs[ conclusion[0] ][ conclusion[1] ]
                                 area = f(dof, 'area')

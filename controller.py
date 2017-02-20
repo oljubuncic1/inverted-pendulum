@@ -32,6 +32,7 @@ while 1:
 #        ctrl.compute()
 
         original_output_force = ctrl.output({'theta': theta, 'dtheta': dtheta})['force']
+        original_output_force = original_output_force * 100.0 / 66.0
         if original_output_force == -1024:
             print 'belaj', theta, dtheta
             continue

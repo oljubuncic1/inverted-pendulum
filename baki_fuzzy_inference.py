@@ -5,9 +5,9 @@ def get_controller():
     ctrl = FuzzyControl()
     all_memberships = [
             ['trapezoid_left', -1.57, -0.58, 'vn'],
-            ['triangle', -0.327, 0.327, 'mn'],
-            ['triangle', 0.0, 0.1745, 'z'],
-            ['triangle', 0.3927, 0.3927, 'mp'],
+            ['triangle', -0.327, 2 * 0.327, 'mn'],
+            ['triangle', 0.0, 2 * 0.1745, 'z'],
+            ['triangle', 0.3927, 2 *0.3927, 'mp'],
             ['trapezoid_right', 0.59, 1.579, 'vp'],
             ]
     ctrl.add_input('theta', (-1 * pi/2, pi/2), all_memberships)
@@ -15,9 +15,9 @@ def get_controller():
 
     force_memberships = [
             ['trapezoid_left', -0.5, -0.1875, 'vn'],
-            ['triangle', -0.125, 0.125, 'mn'],
-            ['triangle', 0.0, 0.0555, 'z'],
-            ['triangle', 0.125, 0.25, 'mp'],
+            ['triangle', -0.125, 2 * 0.125, 'mn'],
+            ['triangle', 0.0, 2 *0.0555, 'z'],
+            ['triangle', 0.125, 2 *0.25, 'mp'],
             ['trapezoid_right', 0.19101, 0.5025, 'vp'],
             ]
     ctrl.add_output('force', (-1, 1), force_memberships)

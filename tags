@@ -1,0 +1,150 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+FuzzyControl	fake.fuzzyinference.baki.py	/^class FuzzyControl:$/;"	kind:class	line:118
+FuzzyControl	fake.fuzzyinference.py	/^class FuzzyControl:$/;"	kind:class	line:118
+FuzzyControl	fakefi.py	/^class FuzzyControl:$/;"	kind:class	line:118
+Test	fake.fuzzyinference.baki.py	/^class Test:$/;"	kind:class	line:197
+Test	fake.fuzzyinference.py	/^class Test:$/;"	kind:class	line:197
+Test	fakefi.py	/^class Test:$/;"	kind:class	line:199
+__init__	fake.fuzzyinference.baki.py	/^	def __init__(self):$/;"	kind:member	line:119
+__init__	fake.fuzzyinference.py	/^	def __init__(self):$/;"	kind:member	line:119
+__init__	fakefi.py	/^        def __init__(self):$/;"	kind:member	line:119
+action	qlearning.py	/^def action(Q, state, k = 2):$/;"	kind:function	line:9
+add_input	fake.fuzzyinference.baki.py	/^	def add_input(self, name, rng, memberships):$/;"	kind:member	line:149
+add_input	fake.fuzzyinference.py	/^	def add_input(self, name, rng, memberships):$/;"	kind:member	line:149
+add_input	fakefi.py	/^        def add_input(self, name, rng, memberships):$/;"	kind:member	line:148
+add_output	fake.fuzzyinference.baki.py	/^	def add_output(self, name, rng, memberships):$/;"	kind:member	line:152
+add_output	fake.fuzzyinference.py	/^	def add_output(self, name, rng, memberships):$/;"	kind:member	line:152
+add_output	fakefi.py	/^        def add_output(self, name, rng, memberships):$/;"	kind:member	line:152
+add_rule	fake.fuzzyinference.baki.py	/^	def add_rule(self, antecedents, conclusions):$/;"	kind:member	line:155
+add_rule	fake.fuzzyinference.py	/^	def add_rule(self, antecedents, conclusions):$/;"	kind:member	line:155
+add_rule	fakefi.py	/^        def add_rule(self, antecedents, conclusions):$/;"	kind:member	line:155
+baki.py	baki.py	1;"	kind:file	line:1
+baki_fuzzy_inference.py	baki_fuzzy_inference.py	1;"	kind:file	line:1
+cart_plot	rendermovie.py	/^    cart_plot = plt.subplot2grid($/;"	kind:variable	line:45
+cart_time_line	rendermovie.py	/^    cart_time_line = plt.subplot2grid($/;"	kind:variable	line:19
+colspan	rendermovie.py	/^        colspan=12$/;"	kind:variable	line:49
+colspan	rendermovie.py	/^        colspan=12,$/;"	kind:variable	line:22
+controller.py	controller.py	1;"	kind:file	line:1
+convert_action	simulation.py	/^def convert_action(a):$/;"	kind:function	line:45
+count	baki.py	/^count = 20$/;"	kind:variable	line:15
+ctrl	controller.py	/^ctrl = fake_ctrl()$/;"	kind:variable	line:21
+ctrl	lib_ctrl.py	/^ctrl = get_lib()$/;"	kind:variable	line:21
+data	rendermovie.py	/^data = simulation.get_steps_fuzzy([0, 0, pi\/4, 0], step_cnt, dt)$/;"	kind:variable	line:10
+draw_point	rendermovie.py	/^    def draw_point(point):$/;"	kind:function	line:54
+dt	rendermovie.py	/^dt = 0.1$/;"	kind:variable	line:8
+dtheta	fuzzy_benchmark.py	/^    dtheta = 5.48033385126$/;"	kind:variable	line:16
+dtheta	fuzzy_benchmark.py	/^    dtheta = random.random() * 3.14$/;"	kind:variable	line:14
+exception_count	lib_ctrl.py	/^exception_count = 5$/;"	kind:variable	line:24
+fake.fuzzyinference.baki.py	fake.fuzzyinference.baki.py	1;"	kind:file	line:1
+fake.fuzzyinference.py	fake.fuzzyinference.py	1;"	kind:file	line:1
+fake_ctrl	fuzzy_benchmark.py	/^fake_ctrl = get_fake()$/;"	kind:variable	line:6
+fake_out	fuzzy_benchmark.py	/^    fake_out = fake_ctrl.output({'theta': theta, 'dtheta': dtheta})['force']$/;"	kind:variable	line:32
+fake_sum	fuzzy_benchmark.py	/^    fake_sum = fake_sum + (time.time() - temp)$/;"	kind:variable	line:33
+fake_sum	fuzzy_benchmark.py	/^fake_sum = 0$/;"	kind:variable	line:9
+fakefi.py	fakefi.py	1;"	kind:file	line:1
+fig	rendermovie.py	/^    fig = plt.figure(0)$/;"	kind:variable	line:16
+fps	rendermovie.py	/^    fps = int(1.0 \/ dt)$/;"	kind:variable	line:61
+frame_number	rendermovie.py	/^    frame_number = 1$/;"	kind:variable	line:62
+fuzzy.py	fuzzy.py	1;"	kind:file	line:1
+fuzzy_benchmark.py	fuzzy_benchmark.py	1;"	kind:file	line:1
+get_controller	baki_fuzzy_inference.py	/^def get_controller(): $/;"	kind:function	line:4
+get_controller	fuzzy.py	/^def get_controller():$/;"	kind:function	line:6
+get_steps_fuzzy	simulation.py	/^def get_steps_fuzzy(initial_state, step_cnt, dt):$/;"	kind:function	line:104
+get_steps_qlearning	simulation.py	/^def get_steps_qlearning(initial_state, step_cnt, dt):$/;"	kind:function	line:68
+i	baki.py	/^i = 0$/;"	kind:variable	line:16
+initial	qlearning.py	/^def initial(shape):$/;"	kind:function	line:6
+is_terminal	simulation.py	/^def is_terminal(state):$/;"	kind:function	line:62
+last_time	baki.py	/^last_time = time.time()$/;"	kind:variable	line:21
+lib_ctrl	fuzzy_benchmark.py	/^lib_ctrl = get_lib()$/;"	kind:variable	line:7
+lib_ctrl.py	lib_ctrl.py	1;"	kind:file	line:1
+lib_out	fuzzy_benchmark.py	/^    lib_out = lib_ctrl.output['force']$/;"	kind:variable	line:26
+lib_sum	fuzzy_benchmark.py	/^    lib_sum = lib_sum + (time.time() - temp)$/;"	kind:variable	line:27
+lib_sum	fuzzy_benchmark.py	/^lib_sum = 0$/;"	kind:variable	line:10
+main	fake.fuzzyinference.baki.py	/^	def main(self):$/;"	kind:member	line:214
+main	fake.fuzzyinference.py	/^	def main(self):$/;"	kind:member	line:214
+main	fakefi.py	/^        def main(self):$/;"	kind:member	line:216
+matching_degree	fake.fuzzyinference.baki.py	/^	def matching_degree(self, x, antecedents):$/;"	kind:member	line:159
+matching_degree	fake.fuzzyinference.py	/^	def matching_degree(self, x, antecedents):$/;"	kind:member	line:159
+matching_degree	fakefi.py	/^        def matching_degree(self, x, antecedents):$/;"	kind:member	line:159
+normalize_theta	baki.py	/^def normalize_theta(x):$/;"	kind:function	line:12
+normalize_theta	controller.py	/^def normalize_theta(theta):$/;"	kind:function	line:16
+normalize_theta	lib_ctrl.py	/^def normalize_theta(theta):$/;"	kind:function	line:16
+output	fake.fuzzyinference.baki.py	/^	def output(self, inputs):$/;"	kind:member	line:168
+output	fake.fuzzyinference.py	/^	def output(self, inputs):$/;"	kind:member	line:168
+output	fakefi.py	/^        def output(self, inputs):$/;"	kind:member	line:168
+pendulum_time_line	rendermovie.py	/^    pendulum_time_line = cart_time_line.twinx()$/;"	kind:variable	line:35
+prev_force	baki.py	/^prev_force = 0$/;"	kind:variable	line:18
+prev_theta	controller.py	/^prev_theta = 0$/;"	kind:variable	line:23
+prev_theta	lib_ctrl.py	/^prev_theta = 0$/;"	kind:variable	line:23
+prev_val	baki.py	/^prev_val = 0$/;"	kind:variable	line:17
+qlearning.py	qlearning.py	1;"	kind:file	line:1
+rendermovie.py	rendermovie.py	1;"	kind:file	line:1
+reward	simulation.py	/^def reward(state):$/;"	kind:function	line:50
+rowspan	rendermovie.py	/^        rowspan=3$/;"	kind:variable	line:23
+rowspan	rendermovie.py	/^        rowspan=8,$/;"	kind:variable	line:48
+rule_set	fake.fuzzyinference.baki.py	/^	def rule_set(self, rng, memberships):$/;"	kind:member	line:125
+rule_set	fake.fuzzyinference.py	/^	def rule_set(self, rng, memberships):$/;"	kind:member	line:125
+rule_set	fakefi.py	/^        def rule_set(self, rng, memberships):$/;"	kind:member	line:125
+scale	simulation.py	/^def scale(x):$/;"	kind:function	line:7
+scale_output	controller.py	/^def scale_output(x, factor=1.):$/;"	kind:function	line:9
+scale_output	lib_ctrl.py	/^def scale_output(x, factor=1.):$/;"	kind:function	line:9
+scale_output	simulation.py	/^def scale_output(x, factor=1.):$/;"	kind:function	line:101
+ser	baki.py	/^ser = serial.Serial('\/dev\/ttyACM0', 9600)$/;"	kind:variable	line:6
+ser	controller.py	/^ser = serial.Serial('\/dev\/ttyACM0', 115200)$/;"	kind:variable	line:12
+ser	lib_ctrl.py	/^ser = serial.Serial('\/dev\/ttyACM0', 115200)$/;"	kind:variable	line:12
+should_eq	fake.fuzzyinference.baki.py	/^	def should_eq(self, name, val1, val2):$/;"	kind:member	line:198
+should_eq	fake.fuzzyinference.py	/^	def should_eq(self, name, val1, val2):$/;"	kind:member	line:198
+should_eq	fakefi.py	/^        def should_eq(self, name, val1, val2):$/;"	kind:member	line:200
+simulate_step	simulation.py	/^def simulate_step(state, force, dt):$/;"	kind:function	line:13
+simulation.py	simulation.py	1;"	kind:file	line:1
+step_cnt	rendermovie.py	/^step_cnt = 100$/;"	kind:variable	line:9
+t	rendermovie.py	/^    t = 0$/;"	kind:variable	line:60
+temp	fuzzy_benchmark.py	/^    temp = time.time()$/;"	kind:variable	line:21
+temp	fuzzy_benchmark.py	/^    temp = time.time()$/;"	kind:variable	line:31
+test	fake.fuzzyinference.baki.py	/^def test():$/;"	kind:function	line:355
+test	fake.fuzzyinference.py	/^def test():$/;"	kind:function	line:353
+test	fakefi.py	/^def test():$/;"	kind:function	line:355
+test_inference_zjuric_example	fake.fuzzyinference.baki.py	/^	def test_inference_zjuric_example(self):$/;"	kind:member	line:317
+test_inference_zjuric_example	fake.fuzzyinference.py	/^	def test_inference_zjuric_example(self):$/;"	kind:member	line:315
+test_inference_zjuric_example	fakefi.py	/^        def test_inference_zjuric_example(self):$/;"	kind:member	line:317
+test_trapezoidal_left	fake.fuzzyinference.baki.py	/^	def test_trapezoidal_left(self):$/;"	kind:member	line:251
+test_trapezoidal_left	fake.fuzzyinference.py	/^	def test_trapezoidal_left(self):$/;"	kind:member	line:251
+test_trapezoidal_left	fakefi.py	/^        def test_trapezoidal_left(self):$/;"	kind:member	line:253
+test_trapezoidal_right	fake.fuzzyinference.baki.py	/^	def test_trapezoidal_right(self):$/;"	kind:member	line:282
+test_trapezoidal_right	fake.fuzzyinference.py	/^	def test_trapezoidal_right(self):$/;"	kind:member	line:282
+test_trapezoidal_right	fakefi.py	/^        def test_trapezoidal_right(self):$/;"	kind:member	line:284
+test_triangular	fake.fuzzyinference.baki.py	/^	def test_triangular(self):$/;"	kind:member	line:231
+test_triangular	fake.fuzzyinference.py	/^	def test_triangular(self):$/;"	kind:member	line:231
+test_triangular	fakefi.py	/^        def test_triangular(self):$/;"	kind:member	line:233
+theta	fuzzy_benchmark.py	/^    theta = 0.139277274309 $/;"	kind:variable	line:15
+theta	fuzzy_benchmark.py	/^    theta = random.random() * 3.14$/;"	kind:variable	line:13
+trapezoid	fake.fuzzyinference.baki.py	/^	def trapezoid(x, special_function = 'none'):$/;"	kind:function	line:101
+trapezoid	fake.fuzzyinference.py	/^	def trapezoid(x, special_function = 'none'):$/;"	kind:function	line:101
+trapezoid	fakefi.py	/^        def trapezoid(x, special_function = 'none'):$/;"	kind:function	line:101
+trapezoid_left	fake.fuzzyinference.baki.py	/^	def trapezoid_left(x, special_function = 'none'):$/;"	kind:function	line:33
+trapezoid_left	fake.fuzzyinference.py	/^	def trapezoid_left(x, special_function = 'none'):$/;"	kind:function	line:33
+trapezoid_left	fakefi.py	/^        def trapezoid_left(x, special_function = 'none'):$/;"	kind:function	line:33
+trapezoid_right	fake.fuzzyinference.baki.py	/^	def trapezoid_right(x, special_function = 'none'):$/;"	kind:function	line:68
+trapezoid_right	fake.fuzzyinference.py	/^	def trapezoid_right(x, special_function = 'none'):$/;"	kind:function	line:68
+trapezoid_right	fakefi.py	/^        def trapezoid_right(x, special_function = 'none'):$/;"	kind:function	line:68
+trapezoidal	fake.fuzzyinference.baki.py	/^def trapezoidal(center, w1, w2):$/;"	kind:function	line:100
+trapezoidal	fake.fuzzyinference.py	/^def trapezoidal(center, w1, w2):$/;"	kind:function	line:100
+trapezoidal	fakefi.py	/^def trapezoidal(center, w1, w2):$/;"	kind:function	line:100
+trapezoidal_left	fake.fuzzyinference.baki.py	/^def trapezoidal_left(left, first, second):$/;"	kind:function	line:32
+trapezoidal_left	fake.fuzzyinference.py	/^def trapezoidal_left(left, first, second):$/;"	kind:function	line:32
+trapezoidal_left	fakefi.py	/^def trapezoidal_left(left, first, second):$/;"	kind:function	line:32
+trapezoidal_right	fake.fuzzyinference.baki.py	/^def trapezoidal_right(first, second, right):$/;"	kind:function	line:67
+trapezoidal_right	fake.fuzzyinference.py	/^def trapezoidal_right(first, second, right):$/;"	kind:function	line:67
+trapezoidal_right	fakefi.py	/^def trapezoidal_right(first, second, right):$/;"	kind:function	line:67
+triangle	fake.fuzzyinference.baki.py	/^	def triangle(x, special_function = ''):$/;"	kind:function	line:5
+triangle	fake.fuzzyinference.py	/^	def triangle(x, special_function = ''):$/;"	kind:function	line:5
+triangle	fakefi.py	/^        def triangle(x, special_function = ''):$/;"	kind:function	line:5
+triangular	fake.fuzzyinference.baki.py	/^def triangular(center, width):$/;"	kind:function	line:4
+triangular	fake.fuzzyinference.py	/^def triangular(center, width):$/;"	kind:function	line:4
+triangular	fakefi.py	/^def triangular(center, width):$/;"	kind:function	line:4
+update	qlearning.py	/^def update(Q, s, a, next_s, r, gamma = 0.5):$/;"	kind:function	line:33
