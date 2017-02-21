@@ -228,8 +228,8 @@ void setup() {
   while (t + 10000 > millis()) {
     readAngle(0);
   }
-  Serial.println();
-  Serial.println("Start");
+  //Serial.println();
+  //Serial.println("Start");
   lastTime = millis();
   
 }
@@ -250,7 +250,7 @@ void readAngle(int printing) {
     // .
     // .
     // .
-    controlMotor();
+    //controlMotor();
   }
 
   // reset interrupt flag and get INT_STATUS byte
@@ -265,7 +265,7 @@ void readAngle(int printing) {
   if ((mpuIntStatus & 0x10) || fifoCount == 1024) {
     // reset so we can continue cleanly
     mpu.resetFIFO();
-    Serial.println(F("FIFO overflow!"));
+    //Serial.println(F("FIFO overflow!"));
 
     // otherwise, check for DMP data ready interrupt (this should happen frequently)
   } else if (mpuIntStatus & 0x02) {
@@ -300,8 +300,8 @@ void readAngle(int printing) {
 
     if (printing == 1 && millis() - lastTime > 10) {
       lastTime = millis();
-      Serial.print("A");
-      Serial.println(ypr[1] * 180 / M_PI);
+      //Serial.print("A");
+      //Serial.println(ypr[1] * 180 / M_PI);
     }
 
   }
@@ -317,6 +317,8 @@ void controlMotor() {
     }
     //Serial.print("S");
     //Serial.println(spinSpeed);
+    Serial.print("A");
+    Serial.println(ypr[1] * 180 / M_PI);
     if (spinSpeed > 100) {
       spinSpeed -= 100;
       myMotor->run(FORWARD);
@@ -350,5 +352,6 @@ void controlMotor() {
 void loop() {
 
   readAngle(1);
+  controlMotor();
 
 }
