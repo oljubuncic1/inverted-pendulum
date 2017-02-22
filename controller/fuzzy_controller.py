@@ -10,7 +10,7 @@ def get_controller():
             ['triangle', 0.3927 / 2, 0.327, 'mp'],
             ['trapezoid_right', 0.58 / 2, 1.57 / 2, 'vp']
     ]
-    ctrl.add_input('theta', (-1 * pi / 4, pi / 4), theta_memberships)
+    ctrl.add_input('theta', (-1 * pi / 2, pi / 2), theta_memberships)
 
     dtheta_memberships = [
         ['trapezoid_left', -1.57, -0.58, 'vn'],
