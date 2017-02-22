@@ -52,6 +52,4 @@ def get_controller():
     ctrl.add_rule({'theta': 'mp', 'dtheta': 'mp'}, {'force': 'vn'})
     ctrl.add_rule({'theta': 'mp', 'dtheta': 'vp'}, {'force': 'vn'})
 
-    
-    
     return ctrl
