@@ -52,13 +52,13 @@ while True:
             continue
         
         output_force = abs(original_output_force) * 100
+        prev_theta = theta
+
+        print '(output_force, theta, prev_theta, dtheta) = (', output_force, theta, prev_theta, dtheta, ');'
+
         if original_output_force < 0:
             output_force = output_force + 100
-
-        prev_theta = theta
         output_force = int(output_force)
-        
-        print '(output_force, theta, prev_theta, dtheta) = (', output_force, theta, prev_theta, dtheta, ');'
         
         print('Sending force...')
         ser.write(str(output_force))
