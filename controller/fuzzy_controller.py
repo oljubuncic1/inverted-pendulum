@@ -22,11 +22,13 @@ def get_controller():
     ctrl.add_input('dtheta', (-1 * 100, 100), dtheta_memberships)
 
     force_memberships = [
-            ['trapezoid_left', -0.99, -0.6, 'vn'],
-            ['triangle', -0.4, 0.6, 'mn'],
-            ['triangle', 0.0, 0.6, 'z'],
-            ['triangle', 0.4, 0.6, 'mp'],
-            ['trapezoid_right', 0.6, 0.99, 'vp']
+            ['trapezoid_left', -0.99, -0.75, 'vn'],
+            ['triangle', -0.6, 0.4, 'sn'],
+            ['triangle', -0.3, 0.4, 'mn'],
+            ['triangle', 0.0, 0.4, 'z'],
+            ['triangle', 0.3, 0.4, 'mp'],
+            ['triangle', 0.6, 0.4, 'sp'],
+            ['trapezoid_right', 0.75, 0.99, 'vp']
     ]
     ctrl.add_output('force', (-1, 1), force_memberships)
 
@@ -45,7 +47,7 @@ def get_controller():
     ctrl.add_rule({'theta': 'mn', 'dtheta': 'vn'}, {'force': 'vp'})
     ctrl.add_rule({'theta': 'mn', 'dtheta': 'mn'}, {'force': 'vp'})
     ctrl.add_rule({'theta': 'mn', 'dtheta': 'z'}, {'force': 'mp'})
-    ctrl.add_rule({'theta': 'mn', 'dtheta': 'mp'}, {'force': 'mp'})
+    ctrl.add_rule({'theta': 'mn', 'dtheta': 'mp'}, {'force': 'sp'})
     ctrl.add_rule({'theta': 'mn', 'dtheta': 'vp'}, {'force': 'z'})
 
     ctrl.add_rule({'theta': 'z', 'dtheta': 'vn'}, {'force': 'vp'})
@@ -55,7 +57,7 @@ def get_controller():
     ctrl.add_rule({'theta': 'z', 'dtheta': 'vp'}, {'force': 'vn'})
 
     ctrl.add_rule({'theta': 'mp', 'dtheta': 'vn'}, {'force': 'z'})
-    ctrl.add_rule({'theta': 'mp', 'dtheta': 'mn'}, {'force': 'mn'})
+    ctrl.add_rule({'theta': 'mp', 'dtheta': 'mn'}, {'force': 'sn'})
     ctrl.add_rule({'theta': 'mp', 'dtheta': 'z'}, {'force': 'mn'})
     ctrl.add_rule({'theta': 'mp', 'dtheta': 'mp'}, {'force': 'vn'})
     ctrl.add_rule({'theta': 'mp', 'dtheta': 'vp'}, {'force': 'vn'})
