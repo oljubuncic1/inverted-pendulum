@@ -14,7 +14,7 @@ def get_controller():
 
     dtheta_memberships = [
         ['trapezoid_left', -1.57 / 4, -0.58 / 4, 'vn'],
-        ['triangle', -0.3927, 2 * 0.327 / 4, 'mn'],
+        ['triangle', -0.3927 / 4, 2 * 0.327 / 4, 'mn'],
         ['triangle', 0.0, 2 * 0.1745 / 4, 'z'],
         ['triangle', 0.3927 / 4, 2 * 0.327 / 4, 'mp'],
         ['trapezoid_right', 0.58 / 4, 1.57 / 4, 'vp']
