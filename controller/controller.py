@@ -42,7 +42,6 @@ while True:
         last_time = temp_time
 
         theta = float(theta[1:])
-        print theta
         theta = normalize_theta(theta)
         dtheta = (theta - prev_theta) / dtime
 
@@ -55,7 +54,7 @@ while True:
         output_force = abs(original_output_force) * 100
         prev_theta = theta
 
-        # print '(output_force, theta, dtheta) = (', output_force, theta * 180.0 / pi, dtheta, ');'
+        print '(output_force, theta, dtheta) = (', output_force, theta * 180.0 / pi, dtheta, ');'
 
         if original_output_force < 0:
             output_force = output_force + 100
