@@ -45,6 +45,8 @@ while True:
         theta = normalize_theta(theta)
         dtheta = (theta - prev_theta) / dtime
 
+        print "dtime: ", dtime
+
         original_output_force = ctrl.output({'theta': theta, 'dtheta': dtheta})['force']
         original_output_force = original_output_force
         if original_output_force == -1024:
