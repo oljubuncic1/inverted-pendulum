@@ -43,9 +43,12 @@ while True:
 
         theta = float(theta[1:])
         theta = normalize_theta(theta)
+        prev_theta = theta
         dtheta = (theta - prev_theta) / dtime
 
+        print "Checking if stick fell"
         if abs(theta) > pi / 4.0:
+            print 'Stick fell, writing zero'
             ser.write('0')
             continue
 
@@ -56,7 +59,7 @@ while True:
             continue
         
         output_force = abs(original_output_force) * 100
-        prev_theta = theta
+       
 
         print '(output_force, theta, dtheta) = (', output_force, theta * 180.0 / pi, dtheta, ');'
 
@@ -64,7 +67,6 @@ while True:
             output_force = output_force + 100
         output_force = int(output_force)
         
-        print('Sending force...')
         ser.write(str(output_force))
         if ser.inWaiting():
             theta = ser.readline()
