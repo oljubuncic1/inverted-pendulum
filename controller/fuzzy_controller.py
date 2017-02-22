@@ -22,11 +22,11 @@ def get_controller():
     ctrl.add_input('dtheta', (-1 * 100, 100), dtheta_memberships)
 
     force_memberships = [
-            ['trapezoid_left', -0.8, -0.6, 'vn'],
+            ['trapezoid_left', -0.99, -0.6, 'vn'],
             ['triangle', -0.4, 0.6, 'mn'],
             ['triangle', 0.0, 0.6, 'z'],
             ['triangle', 0.4, 0.6, 'mp'],
-            ['trapezoid_right', 0.6, 0.8, 'vp']
+            ['trapezoid_right', 0.6, 0.99, 'vp']
     ]
     ctrl.add_output('force', (-1, 1), force_memberships)
 
