@@ -35,6 +35,7 @@ ctrl = fake_ctrl()
 prev_theta = 0
 theta = 'A0'
 last_time = 0
+output_force = None
 while True:
     try:
         temp_time = time.time()
@@ -47,25 +48,25 @@ while True:
         dtheta = (theta - prev_theta) / dtime
 
         print "Checking if stick fell"
+        
         if abs(theta) > pi / 4.0:
             print 'Stick fell, writing zero'
-            ser.write('0')
-            continue
-
-        original_output_force = ctrl.output({'theta': theta, 'dtheta': dtheta})['force']
-        original_output_force = original_output_force
-        if original_output_force == -1024:
-            print 'Error: Fuzzy controller calculated 0 area'
-            continue
+            output_force = 0
+        else:
+            original_output_force = ctrl.output({'theta': theta, 'dtheta': dtheta})['force']
+            original_output_force = original_output_force
+            if original_output_force == -1024:
+                print 'Error: Fuzzy controller calculated 0 area'
+                continue
+            
+            output_force = abs(original_output_force) * 100
         
-        output_force = abs(original_output_force) * 100
-       
 
-        print '(output_force, theta, dtheta) = (', output_force, theta * 180.0 / pi, dtheta, ');'
+            print '(output_force, theta, dtheta) = (', output_force, theta * 180.0 / pi, dtheta, ');'
 
-        if original_output_force < 0:
-            output_force = output_force + 100
-        output_force = int(output_force)
+            if original_output_force < 0:
+                output_force = output_force + 100
+            output_force = int(output_force)
         
         ser.write(str(output_force))
         if ser.inWaiting():
