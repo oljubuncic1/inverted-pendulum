@@ -45,6 +45,10 @@ while True:
         theta = normalize_theta(theta)
         dtheta = (theta - prev_theta) / dtime
 
+        if abs(theta) > pi / 4.0:
+            ser.write('0')
+            continue
+
         original_output_force = ctrl.output({'theta': theta, 'dtheta': dtheta})['force']
         original_output_force = original_output_force
         if original_output_force == -1024:
@@ -70,5 +74,5 @@ while True:
 
         time.sleep(sleep_time)
     except Exception as e:
-            print 'Error: An Exception has occured', e
-            break
+        print 'Error: An Exception has occured', e
+        break

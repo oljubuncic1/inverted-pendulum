@@ -3,8 +3,7 @@ import random
 from math import pi
 import numpy as np
 
-def initial(shape):
-	return np.ndarray(shape, dtype=float)
+
 
 def action(Q, state, k = 2):
 	state[0] = int( state[0] / (2 * pi) * Q.shape[0] )
