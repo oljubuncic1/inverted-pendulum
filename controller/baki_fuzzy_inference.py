@@ -1,4 +1,4 @@
-from fakefi import FuzzyControl
+from fuzzyinference import FuzzyControl
 from math import pi
 
 def get_controller(): 
