@@ -28,7 +28,7 @@ def graceful_shutdown(signal, frame):
 signal.signal(signal.SIGINT, graceful_shutdown)
 signal.signal(signal.SIGTERM, graceful_shutdown)
 
-sleep_time = 0.03
+sleep_time = 0.01
 
 ctrl = fake_ctrl()
 
