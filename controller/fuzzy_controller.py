@@ -5,10 +5,10 @@ def get_controller():
     ctrl = FuzzyControl()
     theta_memberships = [
             ['trapezoid_left', -1.57, -0.58, 'vn'],
-            ['triangle', -0.327, 2 * 0.327, 'mn'],
+            ['triangle', -0.3927, 2 * 0.327, 'mn'],
             ['triangle', 0.0, 2 * 0.1745, 'z'],
-            ['triangle', 0.3927, 2 *0.3927, 'mp'],
-            ['trapezoid_right', 0.59, 1.579, 'vp']
+            ['triangle', 0.3927, 2 *0.327, 'mp'],
+            ['trapezoid_right', 0.58, 1.57, 'vp']
     ]
     ctrl.add_input('theta', (-1 * pi / 2, pi / 2), theta_memberships)
 
