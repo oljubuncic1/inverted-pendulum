@@ -59,7 +59,7 @@ while True:
                 print 'Error: Fuzzy controller calculated 0 area'
                 continue
             
-            output_force = abs(original_output_force) * 100
+            output_force = abs(original_output_force) * 1000000000000
         
 
             print '(output_force, theta, dtheta) = (', output_force, theta * 180.0 / pi, dtheta, ');'
